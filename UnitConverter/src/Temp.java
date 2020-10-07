@@ -14,11 +14,11 @@ public class Temp {
 	}
 
 	private static double tempCK(double celsius) {
-		return celsius + 273.15;
+		return celsius - 273.15;
 	}
 
 	private static double tempKC(double kelvin) {
-		return kelvin - 273.15;
+		return kelvin + 273.15;
 	}
 
 	private static double tempFK(double fahrenheit) {
@@ -26,7 +26,7 @@ public class Temp {
 	}
 
 	private static double tempKF(double kelvin) {
-		return (kelvin - 237.15) * 1.8 + 32;
+		return (kelvin + 237.15) * 1.8 + 32;
 	}
 
 	public static void tempConv() {

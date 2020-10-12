@@ -1,3 +1,4 @@
+
 /* A program to convert temperature units.
  * Other types of units will be added later.
  */
@@ -14,14 +15,24 @@ public class Program {
 			System.out.println("temp:     Temperature");
 			System.out.println("angle:    Angles");
 			System.out.println("\ntype end to close the program");
+
 			mode = input.nextLine();
-			if (mode.equals("temp")) {
-				Temp.tempConv();
-			}
-			else if (mode.equals("end")) {
-				System.exit(0);
+
+			while (true) {
+				switch (mode) {
+				case ("temp"):
+					Temp.tempConv();
+					break;
+				case ("angle"):
+					Angle.angconv();
+					break;
+				case ("end"):
+					System.exit(0);
+					break;
+				default:
+					System.out.println("\nInvalid Input");
+				}
 			}
 		}
 	}
-
 }

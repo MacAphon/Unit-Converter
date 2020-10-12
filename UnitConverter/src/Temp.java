@@ -14,11 +14,11 @@ public class Temp {
 	}
 
 	private static double tempCK(double celsius) {
-		return celsius - 273.15;
+		return celsius + 273.15;
 	}
 
 	private static double tempKC(double kelvin) {
-		return kelvin + 273.15;
+		return kelvin - 273.15;
 	}
 
 	private static double tempFK(double fahrenheit) {
@@ -26,7 +26,7 @@ public class Temp {
 	}
 
 	private static double tempKF(double kelvin) {
-		return (kelvin + 237.15) * 1.8 + 32;
+		return (kelvin - 237.15) * 1.8 + 32;
 	}
 
 	public static void tempConv() {
@@ -34,36 +34,48 @@ public class Temp {
 		int submode;
 		double temp;
 		
-		System.out.println("\nSelect conversion mode\n\n1: Celsius to Fahrenheit\n2: Fahrenheit to Celsius");
-		System.out.println("3: Celsius to Kelvin\n4: Kelvin to Celsius\n5: Fahrenheit to Kelvin\n6: Kelvin to fahrenheit");
-		
+		System.out.println("\nSelect conversion mode\n");
+		System.out.println("1: Celsius to Fahrenheit");
+		System.out.println("2: Fahrenheit to Celsius");
+		System.out.println("3: Celsius to Kelvin");
+		System.out.println("4: Kelvin to Celsius");
+		System.out.println("5: Fahrenheit to Kelvin");
+		System.out.println("6: Kelvin to fahrenheit");
+				
 		submode = input.nextInt();
 		
-		if (submode == 1) {
+		switch (submode) {
+		case (1):
 			System.out.println("\nInput temperature in Celsius");
 			temp = input.nextDouble();
 			System.out.println(tempCF(temp));
-		} else if (submode == 2) {
+			break;
+		case (2):
 			System.out.println("\nInput temperature in Fahrenheit");
 			temp = input.nextDouble();
 			System.out.println(tempFC(temp));
-		} else if (submode == 3) {
+			break;
+		case (3):
 			System.out.println("\nInput temperature in Celsius");
 			temp = input.nextDouble();
 			System.out.println(tempCK(temp));
-		} else if (submode == 4) {
+			break;
+		case (4):
 			System.out.println("\nInput temperature in Kelvin");
 			temp = input.nextDouble();
 			System.out.println(tempKC(temp));
-		} else if (submode == 5) {
+			break;
+		case (5):
 			System.out.println("\nInput temperature in Fahrenheit");
 			temp = input.nextDouble();
 			System.out.println(tempFK(temp));
-		} else if (submode == 6) {
+			break;
+		case (6):
 			System.out.println("\nInput temperature in Kelvin");
 			temp = input.nextDouble();
 			System.out.println(tempFC(temp));
-		} else {
+			break;
+		default:
 			System.out.println("\nInvalid Input");
 		}
 	}
